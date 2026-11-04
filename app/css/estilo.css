@@ -317,8 +317,10 @@ legend { font-family: var(--fonte-titulo); font-weight: 650; font-size: 1.15rem;
 .item h3 { font-size: 1.05rem; margin: 0 0 var(--e-1); }
 .item__controles { display: flex; align-items: center; gap: var(--e-2); flex-wrap: wrap; }
 .passo-qtd { display: inline-flex; align-items: center; border: 1px solid var(--cor-borda-forte); border-radius: 999px; overflow: hidden; }
-.passo-qtd button { width: 32px; height: 32px; border: 0; background: var(--cor-superficie); font-size: 1.1rem; font-weight: 700; color: var(--cor-chocolate); cursor: pointer; }
+/* v1.1 (relato 4): alvos de toque de 44px, recomendação de acessibilidade para celular */
+.passo-qtd button { width: var(--alvo-toque); height: var(--alvo-toque); border: 0; background: var(--cor-superficie); font-size: 1.1rem; font-weight: 700; color: var(--cor-chocolate); cursor: pointer; }
 .passo-qtd button:hover { background: var(--cor-superficie-2); }
+.passo-qtd button:disabled { color: #b8a597; cursor: not-allowed; background: var(--cor-superficie); }
 .passo-qtd output { min-width: 2rem; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
 .item__total { font-weight: 800; text-align: right; font-variant-numeric: tabular-nums; }
 @media (max-width: 520px) {
