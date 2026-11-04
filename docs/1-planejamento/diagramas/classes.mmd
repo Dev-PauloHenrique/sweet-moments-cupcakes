@@ -1,0 +1,135 @@
+classDiagram
+  direction LR
+  class Usuario {
+    -int id
+    -String nome
+    -String email
+    -String senhaHash
+    -String senhaSalt
+    -PerfilUsuario perfil
+    -String telefone
+    -DateTime dataCadastro
+    +cadastrar(dados) Usuario
+    +autenticar(email, senha) Usuario
+  }
+  class Categoria {
+    -int id
+    -String nome
+    -String descricao
+  }
+  class Produto {
+    -int id
+    -String nome
+    -String descricao
+    -int precoCentavos
+    -String imagem
+    -boolean ativo
+    +listar(filtros) List~Produto~
+    +criar(dados) Produto
+    +atualizar(dados) Produto
+    +definirAtivo(ativo)
+  }
+  class Endereco {
+    -int id
+    -String cep
+    -String logradouro
+    -String numero
+    -String complemento
+    -String bairro
+    -String cidade
+    -String uf
+  }
+  class Pedido {
+    -int id
+    -DateTime dataPedido
+    -TipoEntrega tipoEntrega
+    -int subtotalCentavos
+    -int taxaEntregaCentavos
+    -int valorTotalCentavos
+    -StatusPedido status
+    -String observacao
+    +criar(cliente, itens, entrega, pagamento) Pedido
+    +atualizarStatus(novo)
+    +proximosStatus() List~StatusPedido~
+  }
+  class ItemPedido {
+    -int id
+    -int quantidade
+    -int precoUnitarioCentavos
+    +subtotal() int
+  }
+  class Pagamento {
+    -int id
+    -FormaPagamento forma
+    -int valorCentavos
+    -StatusPagamento status
+    -DateTime dataPagamento
+  }
+  class HistoricoStatus {
+    -int id
+    -StatusPedido status
+    -DateTime data
+  }
+  class Carrinho {
+    <<navegador>>
+    +adicionar(produtoId, qtd)
+    +alterarQuantidade(produtoId, qtd)
+    +remover(produtoId)
+    +resumo() Resumo
+    +limpar()
+  }
+  class ItemCarrinho {
+    <<navegador>>
+    -int produtoId
+    -int quantidade
+  }
+  class PerfilUsuario {
+    <<enumeration>>
+    CLIENTE
+    ATENDENTE
+    ADMINISTRADOR
+    GESTOR
+  }
+  class StatusPedido {
+    <<enumeration>>
+    RECEBIDO
+    EM_PREPARACAO
+    PRONTO
+    SAIU_PARA_ENTREGA
+    CONCLUIDO
+    CANCELADO
+  }
+  class TipoEntrega {
+    <<enumeration>>
+    ENTREGA
+    RETIRADA
+  }
+  class FormaPagamento {
+    <<enumeration>>
+    PIX
+    CARTAO
+    DINHEIRO
+  }
+  class StatusPagamento {
+    <<enumeration>>
+    PENDENTE
+    APROVADO
+    RECUSADO
+  }
+  Categoria "1" -- "0..*" Produto : classifica
+  Usuario "1" -- "0..*" Endereco : possui
+  Usuario "1" -- "0..*" Pedido : realiza
+  Pedido "0..*" --> "0..1" Endereco : entregar em
+  Pedido "1" *-- "1..*" ItemPedido
+  ItemPedido "0..*" --> "1" Produto
+  Pedido "1" *-- "1" Pagamento
+  Pedido "1" *-- "1..*" HistoricoStatus
+  HistoricoStatus "0..*" --> "1" Usuario : alterado por
+  Carrinho "1" *-- "0..*" ItemCarrinho
+  ItemCarrinho ..> Produto
+  Carrinho ..> Pedido : origina
+  Usuario ..> PerfilUsuario
+  Pedido ..> StatusPedido
+  Pedido ..> TipoEntrega
+  Pagamento ..> FormaPagamento
+  Pagamento ..> StatusPagamento

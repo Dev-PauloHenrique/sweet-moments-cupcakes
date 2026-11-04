@@ -1,0 +1,24 @@
+flowchart LR
+  U(["👤 Usuário"])
+  subgraph NAV["Navegador do usuário"]
+    direction LR
+    V["View<br/>HTML + CSS + views/*.js"]
+    R["Front controller<br/>app.js"]
+    C["Controllers<br/>controllers/*.js"]
+    M["Models<br/>Usuario · Produto · Carrinho<br/>Pedido · Permissões"]
+    S["Serviços<br/>segurança · sessão<br/>pagamento simulado · limitador"]
+    DB[("SQLite via sql.js<br/>schema.sql + dados-iniciais.sql")]
+    LS[("localStorage<br/>banco · carrinho · sessão")]
+  end
+  GH["GitHub Pages<br/>hospedagem estática HTTPS"]
+  CI["GitHub Actions<br/>npm test + deploy"]
+  U -- interage --> V
+  V -- "carrega a página" --> R
+  R -- despacha --> C
+  C -- "regras de negócio" --> M
+  M --> S
+  M -- "SQL parametrizado" --> DB
+  DB -- "persiste após escrita" --> LS
+  C -- "atualiza a tela" --> V
+  GH -- "entrega HTML/CSS/JS/WASM" --> V
+  CI -- "publica se os testes passarem" --> GH

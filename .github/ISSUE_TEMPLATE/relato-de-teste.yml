@@ -1,0 +1,64 @@
+name: Relato de teste
+description: Registre o que você testou na loja Sweet Moments Cupcakes (bugs e sugestões).
+title: "[Teste] "
+labels: ["relato de teste"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por testar! A loja é fictícia: nenhum pedido ou pagamento é real.
+        Não informe senhas, documentos ou dados pessoais reais neste formulário.
+  - type: input
+    id: nome
+    attributes:
+      label: Nome de quem testou
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: Data do teste
+      placeholder: "dd/mm/aaaa"
+    validations:
+      required: true
+  - type: input
+    id: dispositivo
+    attributes:
+      label: Dispositivo e navegador
+      placeholder: "Ex.: celular Android, Chrome"
+  - type: checkboxes
+    id: perfis
+    attributes:
+      label: Perfis usados
+      options:
+        - label: Visitante
+        - label: Cliente
+        - label: Atendente
+        - label: Administrador
+        - label: Gestor
+  - type: textarea
+    id: funcionou
+    attributes:
+      label: O que testou e funcionou
+      description: Descreva as funcionalidades e o que você fez.
+    validations:
+      required: true
+  - type: textarea
+    id: nao-funcionou
+    attributes:
+      label: O que testou e não funcionou — o que deve ser corrigido
+      description: Passos para repetir, o que esperava e o que aconteceu. Arraste capturas de tela para cá.
+  - type: textarea
+    id: sugestoes
+    attributes:
+      label: Sugestões de melhoria
+  - type: textarea
+    id: nao-testado
+    attributes:
+      label: Funcionalidade não testada
+      description: O que faltou testar e por quê, ou o que não existe no projeto.
+  - type: dropdown
+    id: nota
+    attributes:
+      label: Nota geral
+      options: ["5 - Excelente", "4 - Boa", "3 - Regular", "2 - Ruim", "1 - Muito ruim"]

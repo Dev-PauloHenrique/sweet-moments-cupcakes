@@ -1,0 +1,35 @@
+sequenceDiagram
+  autonumber
+  actor Cliente
+  participant View as View<br/>checkout.html
+  participant Ctrl as CheckoutController
+  participant Carrinho as Carrinho (Model)
+  participant Pedido as PedidoModel
+  participant Pag as Pagamento (simulado)
+  participant DB as SQLite (sql.js)<br/>+ localStorage
+  Cliente->>View: Preenche entrega/pagamento e confirma
+  View->>Ctrl: submit(dados do formulário)
+  Ctrl->>Carrinho: itensParaPedido()
+  Carrinho-->>Ctrl: [{produtoId, quantidade}]
+  Ctrl->>Pedido: criar(usuario, itens, entrega, pagamento)
+  Pedido->>Pedido: exigir perfil CLIENTE (RN02)
+  alt Dados inválidos
+    Pedido-->>Ctrl: ErroValidacao(campos)
+    Ctrl-->>View: mostrarErros()
+    View-->>Cliente: Mensagens ao lado dos campos
+  else Dados válidos
+    loop para cada item
+      Pedido->>DB: SELECT preço e disponibilidade (parâmetro ?)
+      DB-->>Pedido: dados atuais do produto
+    end
+    Pedido->>Pedido: calcular subtotal + taxa (RN04)
+    Pedido->>Pag: simularPagamento(forma, total)
+    Pag-->>Pedido: APROVADO ou PENDENTE
+    Pedido->>DB: BEGIN TRANSACTION
+    Pedido->>DB: INSERT endereco, pedido, item_pedido, pagamento, historico_status
+    Pedido->>DB: COMMIT e persistir no localStorage
+    Pedido-->>Ctrl: detalhe do pedido
+    Ctrl->>Carrinho: limpar()
+    Ctrl-->>View: mostrarConfirmacao(pedido)
+    View-->>Cliente: Número e total do pedido
+  end

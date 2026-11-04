@@ -1,0 +1,32 @@
+flowchart TD
+  I((Início)) --> A[Acessar a loja]
+  A --> B[Visualizar cardápio<br/>pesquisar ou filtrar]
+  B --> C[Adicionar cupcakes ao carrinho]
+  C --> D[[Sistema valida disponibilidade<br/>e quantidade - RN01]]
+  D --> E[Revisar carrinho]
+  E --> F{Alterar carrinho?}
+  F -- Sim --> G[Alterar quantidades<br/>ou remover itens]
+  G --> H[[Sistema recalcula subtotal<br/>com preços do banco - RN04]]
+  H --> E
+  F -- Não --> J[Finalizar pedido]
+  J --> K{Cliente autenticado?}
+  K -- Não --> L[Entrar ou criar conta]
+  L --> M{Dados válidos?}
+  M -- Não --> L
+  M -- Sim --> N
+  K -- Sim --> N[Escolher entrega ou retirada - RN05]
+  N --> O{Entrega?}
+  O -- Sim --> P[Informar endereço]
+  P --> Q[[Sistema valida endereço - RN06<br/>e soma taxa de entrega]]
+  O -- Não --> R[[Sistema exibe instruções<br/>de retirada]]
+  Q --> S[Selecionar forma de pagamento]
+  R --> S
+  S --> T[Confirmar pedido]
+  T --> U{Dados válidos?}
+  U -- Não --> V[[Destacar campos e levar<br/>o foco ao primeiro erro]]
+  V --> T
+  U -- Sim --> W[[Simular pagamento - RN11<br/>Pix aprovado / cartão e dinheiro pendente]]
+  W --> X[[Gravar pedido, itens, pagamento e histórico<br/>em uma transação - RN07 e RN12]]
+  X --> Y[[Esvaziar carrinho e exibir<br/>número e total do pedido]]
+  Y --> Z[Acompanhar status em Meus pedidos]
+  Z --> FIM(((Fim)))

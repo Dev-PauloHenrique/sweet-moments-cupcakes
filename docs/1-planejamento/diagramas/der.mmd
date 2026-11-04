@@ -1,0 +1,79 @@
+erDiagram
+  CATEGORIA ||--o{ PRODUTO : classifica
+  USUARIO ||--o{ ENDERECO : possui
+  USUARIO ||--o{ PEDIDO : realiza
+  ENDERECO |o--o{ PEDIDO : "entregar em"
+  PEDIDO ||--|{ ITEM_PEDIDO : contem
+  PRODUTO ||--o{ ITEM_PEDIDO : "vendido em"
+  PEDIDO ||--|| PAGAMENTO : "pago por"
+  PEDIDO ||--|{ HISTORICO_STATUS : registra
+  USUARIO ||--o{ HISTORICO_STATUS : altera
+  USUARIO {
+    INTEGER id PK
+    TEXT nome
+    TEXT email UK
+    TEXT senha_hash
+    TEXT senha_salt
+    TEXT perfil
+    TEXT telefone
+    TEXT data_cadastro
+  }
+  CATEGORIA {
+    INTEGER id PK
+    TEXT nome UK
+    TEXT descricao
+  }
+  PRODUTO {
+    INTEGER id PK
+    INTEGER categoria_id FK
+    TEXT nome UK
+    TEXT descricao
+    INTEGER preco_centavos
+    TEXT imagem
+    INTEGER ativo
+  }
+  ENDERECO {
+    INTEGER id PK
+    INTEGER usuario_id FK
+    TEXT cep
+    TEXT logradouro
+    TEXT numero
+    TEXT complemento
+    TEXT bairro
+    TEXT cidade
+    TEXT uf
+  }
+  PEDIDO {
+    INTEGER id PK
+    INTEGER cliente_id FK
+    INTEGER endereco_id FK
+    TEXT data_pedido
+    TEXT tipo_entrega
+    INTEGER subtotal_centavos
+    INTEGER taxa_entrega_centavos
+    INTEGER valor_total_centavos
+    TEXT status
+    TEXT observacao
+  }
+  ITEM_PEDIDO {
+    INTEGER id PK
+    INTEGER pedido_id FK
+    INTEGER produto_id FK
+    INTEGER quantidade
+    INTEGER preco_unitario_centavos
+  }
+  PAGAMENTO {
+    INTEGER id PK
+    INTEGER pedido_id FK,UK
+    TEXT forma
+    INTEGER valor_centavos
+    TEXT status
+    TEXT data_pagamento
+  }
+  HISTORICO_STATUS {
+    INTEGER id PK
+    INTEGER pedido_id FK
+    INTEGER usuario_id FK
+    TEXT status
+    TEXT data
+  }
