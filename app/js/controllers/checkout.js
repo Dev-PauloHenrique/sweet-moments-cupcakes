@@ -7,6 +7,7 @@ import {
 import { TAXA_ENTREGA_CENTAVOS, UFS } from '../models/pedido.js';
 import { FORMAS_PAGAMENTO } from '../servicos/pagamento.js';
 import { exigirLoginPagina } from './comum.js';
+import { aplicarMascara, mascararCep } from '../views/mascaras.js';
 
 /** HU07, HU08 e HU09 — entrega/retirada, pagamento demonstrativo e confirmação. */
 export function iniciar(ctx) {
@@ -110,6 +111,7 @@ export function iniciar(ctx) {
   </form>`;
 
   const form = $('[data-form-checkout]');
+  aplicarMascara(form.elements.cep, mascararCep);
   const atualizarEntrega = () => {
     const entrega = form.elements.tipoEntrega.value === 'ENTREGA';
     $('[data-endereco]', form).hidden = !entrega;

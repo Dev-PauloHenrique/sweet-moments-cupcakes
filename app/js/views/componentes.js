@@ -74,11 +74,22 @@ export function mostrarErros(formulario, erro) {
     alerta.className = 'alerta alerta--erro';
     alerta.textContent = mensagemSegura(erro);
   }
+  let primeiro = null;
   for (const [campo, mensagem] of Object.entries(erro?.campos ?? {})) {
     const entrada = formulario.elements?.namedItem?.(campo);
     const destino = $(`[data-erro-para="${campo}"]`, formulario);
-    if (entrada?.setAttribute) entrada.setAttribute('aria-invalid', 'true');
+    if (entrada?.setAttribute) {
+      entrada.setAttribute('aria-invalid', 'true');
+      primeiro ??= entrada;
+    }
     if (destino) destino.textContent = mensagem;
+  }
+  // v1.1 (relato 2): leva o usuário direto ao primeiro campo que precisa de correção
+  if (primeiro?.focus) {
+    primeiro.focus();
+    primeiro.scrollIntoView?.({ block: 'center' });
+  } else if (alerta) {
+    alerta.scrollIntoView?.({ block: 'center' });
   }
 }
 

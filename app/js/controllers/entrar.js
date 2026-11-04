@@ -7,6 +7,7 @@ import { PERFIS_EQUIPE } from '../models/usuario.js';
 import { LimitadorTentativas } from '../servicos/limitador.js';
 import { criarArmazenamentoNavegador } from '../servicos/armazenamento.js';
 import { ErroAutenticacao, ErroValidacao } from '../servicos/erros.js';
+import { aplicarMascara, mascararTelefone } from '../views/mascaras.js';
 
 /** HU03 (cadastro) e HU04 (autenticação). */
 export function iniciar(ctx) {
@@ -26,6 +27,7 @@ export function iniciar(ctx) {
   const limitador = new LimitadorTentativas(criarArmazenamentoNavegador(), 'login');
   const formLogin = $('[data-form-login]');
   const formCadastro = $('[data-form-cadastro]');
+  aplicarMascara(formCadastro.elements.telefone, mascararTelefone);
 
   $('[data-contas-demo]').innerHTML = CONTAS_DEMO.map((c) => `<li>
       <button type="button" class="link-botao" data-preencher="${e(c.email)}">${e(c.nome.replace(' Demonstração', ''))}</button>
