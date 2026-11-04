@@ -8,4 +8,4 @@ Disallow: /sweet-moments-cupcakes/entrar.html
 Disallow: /sweet-moments-cupcakes/pedidos.html
 Disallow: /sweet-moments-cupcakes/painel.html
 
-Sitemap: __BASE_URL__sitemap.xml
+Sitemap: https://dev-paulohenrique.github.io/sweet-moments-cupcakes/sitemap.xml

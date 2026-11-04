@@ -4,7 +4,7 @@ Loja virtual **fictícia** de cupcakes gourmet, desenvolvida para o **Projeto In
 
 **Aluno:** Paulo Henrique Cordeiro Santos
 
-- 🌐 **Site em funcionamento:** __BASE_URL__
+- 🌐 **Site em funcionamento:** https://dev-paulohenrique.github.io/sweet-moments-cupcakes/
 - 📚 **Documentação:** [docs/](docs/README.md)
 - 🧪 **Testes:** `npm test` — 28 testes automatizados (executados também pelo GitHub Actions antes de cada publicação)
 
@@ -38,7 +38,7 @@ Por que não há servidor? O GitHub Pages hospeda apenas arquivos estáticos; pa
 Requisito: [Node.js](https://nodejs.org/) 20 ou superior. Não é preciso instalar dependências.
 
 ```bash
-git clone __REPO_URL__.git
+git clone https://github.com/Dev-PauloHenrique/sweet-moments-cupcakes.git
 cd sweet-moments-cupcakes
 npm test     # roda os testes
 npm start    # abre o servidor em http://localhost:8080

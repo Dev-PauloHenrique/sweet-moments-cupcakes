@@ -6,9 +6,9 @@ O site permite navegar pelo cardápio, montar um carrinho, finalizar um pedido d
 
 ## Páginas públicas
 
-- [Página inicial](__BASE_URL__): apresentação da loja, sabores em destaque, como funciona e perguntas frequentes.
-- [Cardápio](__BASE_URL__cardapio.html): todos os sabores com descrição, categoria, preço por unidade e disponibilidade.
+- [Página inicial](https://dev-paulohenrique.github.io/sweet-moments-cupcakes/): apresentação da loja, sabores em destaque, como funciona e perguntas frequentes.
+- [Cardápio](https://dev-paulohenrique.github.io/sweet-moments-cupcakes/cardapio.html): todos os sabores com descrição, categoria, preço por unidade e disponibilidade.
 
 ## Projeto
 
-- [Código-fonte e documentação](__REPO_URL__): requisitos, diagramas UML, modelo de dados, testes e relatórios do projeto acadêmico.
+- [Código-fonte e documentação](https://github.com/Dev-PauloHenrique/sweet-moments-cupcakes): requisitos, diagramas UML, modelo de dados, testes e relatórios do projeto acadêmico.
