@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Painel da equipe | Sweet Moments Cupcakes</title>
+  <meta name="description" content="Área administrativa: pedidos, produtos e relatório de vendas.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#fff8f0">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&amp;family=Nunito+Sans:opsz,wght@6..12,400..800&amp;display=swap">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="vendor/sql-wasm.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-pagina="painel">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <p class="faixa-demo">Loja fictícia criada para um projeto acadêmico — nenhum pedido, entrega ou pagamento é real.</p>
+  <header class="topo">
+    <div class="container topo__linha">
+      <a class="marca" href="index.html"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="23" fill="#fbe3ea"/><path d="M13 25h22l-3 14H16z" fill="#a61e4d"/><path d="M17 25l1.5 14M24 25v14M31 25l-1.5 14" stroke="#fff8f0" stroke-width="1.6"/><path d="M11 25c0-5 4-7 7-7 0-4 3-7 6-7s6 3 6 7c3 0 7 2 7 7z" fill="#fff8f0" stroke="#4a2c1d" stroke-width="1.8" stroke-linejoin="round"/><circle cx="24" cy="10" r="2.6" fill="#a61e4d"/></svg><span>Sweet Moments<small>Cupcakes</small></span></a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="pedidos.html">Meus pedidos</a></li>
+          <li data-somente-equipe hidden><a href="painel.html" aria-current="page">Painel</a></li>
+        </ul>
+      </nav>
+      <div class="topo__acoes">
+        <a class="botao-carrinho" href="carrinho.html" aria-label="Carrinho"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg><span class="contador" data-contador-carrinho hidden>0</span></a>
+        <div class="conta" data-conta><a class="botao botao--secundario botao--pequeno" href="entrar.html">Entrar</a></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="container" data-conteudo>
+      <header class="cabecalho-pagina"><h1>Painel da equipe</h1><p class="texto-apoio">Perfil: <strong data-perfil>—</strong></p></header>
+      <div class="secao" data-painel><div class="estado carregando" aria-busy="true"><p>Carregando…</p></div></div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div>
+        <h2>Sweet Moments Cupcakes</h2>
+        <p>Projeto Integrador Transdisciplinar em Engenharia de Software II. Marca, produtos, preços e endereço são fictícios.</p>
+      </div>
+      <div>
+        <h2>Navegação</h2>
+        <ul>
+          <li><a href="cardapio.html">Cardápio</a></li>
+          <li><a href="carrinho.html">Carrinho</a></li>
+          <li><a href="pedidos.html">Meus pedidos</a></li>
+          <li><a href="entrar.html">Entrar ou criar conta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Sobre os dados</h2>
+        <p>Tudo o que você cadastra fica salvo somente neste navegador.</p>
+        <button type="button" class="link-botao" data-restaurar>Restaurar loja de demonstração</button>
+      </div>
+    </div>
+  </footer>
+  <div class="avisos" id="avisos" role="status" aria-live="polite"></div>
+</body>
+</html>

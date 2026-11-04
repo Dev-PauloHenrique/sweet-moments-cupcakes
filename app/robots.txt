@@ -1,0 +1,11 @@
+# Sweet Moments Cupcakes (loja fictícia, projeto acadêmico)
+# Observação: robots.txt orienta robôs de busca; não é controle de acesso.
+User-agent: *
+Allow: /
+Disallow: /sweet-moments-cupcakes/carrinho.html
+Disallow: /sweet-moments-cupcakes/checkout.html
+Disallow: /sweet-moments-cupcakes/entrar.html
+Disallow: /sweet-moments-cupcakes/pedidos.html
+Disallow: /sweet-moments-cupcakes/painel.html
+
+Sitemap: __BASE_URL__sitemap.xml

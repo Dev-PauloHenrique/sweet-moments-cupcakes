@@ -1,0 +1,4 @@
+{
+  "//": "Indica ao Node.js (testes) que os arquivos desta pasta são ES Modules.",
+  "type": "module"
+}

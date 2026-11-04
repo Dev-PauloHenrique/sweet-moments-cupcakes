@@ -1,0 +1,11 @@
+{
+  "name": "Sweet Moments Cupcakes",
+  "short_name": "Sweet Moments",
+  "description": "Loja fictícia de cupcakes gourmet (projeto acadêmico).",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#fff8f0",
+  "icons": [{ "src": "img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
