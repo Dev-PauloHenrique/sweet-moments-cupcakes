@@ -210,6 +210,10 @@ p { margin: 0 0 var(--e-4); }
 
 /* ---------- Catálogo ---------- */
 .cabecalho-pagina { padding-block: var(--e-6) var(--e-4); }
+.busca { display: flex; flex-direction: column; gap: var(--e-1); max-width: 28rem; margin-bottom: var(--e-4); }
+.busca label { font-weight: 700; font-size: var(--fs-apoio); }
+input[type='search'] { width: 100%; min-height: var(--alvo-toque); padding: var(--e-2) var(--e-3); border: 1px solid var(--cor-borda-forte);
+  border-radius: 999px; background: var(--cor-superficie); color: var(--cor-texto); font: inherit; }
 .filtros { display: flex; flex-wrap: wrap; gap: var(--e-2); margin-bottom: var(--e-5); align-items: center; }
 .chip {
   min-height: var(--alvo-toque); padding: 0 var(--e-4); border-radius: 999px; cursor: pointer;

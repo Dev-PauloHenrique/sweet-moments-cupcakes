@@ -101,3 +101,13 @@ test('carrinho ignora dados corrompidos no armazenamento', async () => {
   armazenamento.gravar('smc:carrinho', JSON.stringify([{ produtoId: 1, quantidade: 999 }, { produtoId: 2, quantidade: 1 }]));
   assert.equal(new Carrinho(armazenamento, produtos).resumo().itens.length, 1);
 });
+
+test('v1.1 (relato 1): pesquisa por nome/descrição ignora maiúsculas e acentos', async () => {
+  const produtos = new ProdutoModel(await novoBanco());
+  assert.deepEqual(produtos.listar({ busca: 'LIMAO' }).map((p) => p.nome), ['Limão Siciliano']);
+  assert.ok(produtos.listar({ busca: 'chocolate' }).length >= 3);
+  assert.equal(produtos.listar({ busca: 'chocolate', categoriaId: 2 }).length, 1);
+  assert.equal(produtos.listar({ busca: 'abacaxi' }).length, 0);
+  assert.equal(produtos.listar({ busca: "' OR 1=1 --" }).length, 0);
+  assert.equal(produtos.listar({ busca: '   ' }).length, 9);
+});

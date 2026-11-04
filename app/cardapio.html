@@ -51,8 +51,12 @@
     <div class="container">
       <header class="cabecalho-pagina">
         <h1>Cardápio</h1>
-        <p class="texto-apoio leitura">Escolha por categoria. Sabores indisponíveis aparecem sinalizados e não podem ser adicionados ao carrinho.</p>
+        <p class="texto-apoio leitura">Pesquise pelo nome ou ingrediente e filtre por categoria. Sabores indisponíveis aparecem sinalizados e não podem ser adicionados ao carrinho.</p>
       </header>
+      <form class="busca" role="search" data-form-busca>
+        <label for="busca">Pesquisar sabor</label>
+        <input id="busca" name="busca" type="search" maxlength="60" placeholder="Ex.: chocolate, limão, pistache" autocomplete="off">
+      </form>
       <div class="filtros" data-filtros role="group" aria-label="Filtrar por categoria"></div>
       <p class="texto-apoio" data-contagem aria-live="polite"></p>
       <div class="grade-produtos secao" data-produtos><div class="estado carregando" aria-busy="true"><p>Carregando…</p></div></div>

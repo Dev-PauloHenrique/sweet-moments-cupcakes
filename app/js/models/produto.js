@@ -19,6 +19,10 @@ const CAMPOS = `p.id, p.nome, p.descricao, p.preco_centavos AS precoCentavos, p.
 
 const normalizar = (linha) => linha && { ...linha, ativo: linha.ativo === 1 };
 
+/** "Limão Siciliano" → "limao siciliano" (para pesquisa sem acento). */
+export const normalizarBusca = (texto) => String(texto ?? '')
+  .normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+
 /** Converte "12,90", "12.90" ou 12.9 em centavos (1290). */
 export function reaisParaCentavos(valor) {
   const texto = String(valor ?? '').trim().replace(/\s|R\$/g, '').replace(',', '.');
@@ -31,17 +35,23 @@ export class ProdutoModel {
     this.banco = banco;
   }
 
-  /** HU01 — catálogo. Por padrão mostra ativos e inativos (inativos aparecem como indisponíveis). */
-  listar({ categoriaId = null, somenteAtivos = false } = {}) {
+  /**
+   * HU01 — catálogo. Por padrão mostra ativos e inativos (inativos aparecem como indisponíveis).
+   * `busca` (v1.1) procura no nome e na descrição, ignorando maiúsculas e acentos.
+   */
+  listar({ categoriaId = null, somenteAtivos = false, busca = '' } = {}) {
     const filtros = [];
     const parametros = [];
     if (categoriaId) { filtros.push('p.categoria_id = ?'); parametros.push(Number(categoriaId)); }
     if (somenteAtivos) filtros.push('p.ativo = 1');
     const where = filtros.length ? `WHERE ${filtros.join(' AND ')}` : '';
-    return this.banco
+    const lista = this.banco
       .consultar(`SELECT ${CAMPOS} FROM produto p JOIN categoria c ON c.id = p.categoria_id
                   ${where} ORDER BY p.ativo DESC, c.id, p.nome`, parametros)
       .map(normalizar);
+    const termo = normalizarBusca(String(busca).slice(0, 60));
+    if (!termo) return lista;
+    return lista.filter((p) => normalizarBusca(`${p.nome} ${p.descricao}`).includes(termo));
   }
 
   /** HU02 — detalhes do produto. */
