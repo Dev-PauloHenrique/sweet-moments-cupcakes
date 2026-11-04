@@ -152,7 +152,9 @@ function abaProdutos(ctx, painel, dialogo) {
       <tbody>${lista.map((p) => `<tr><td>${e(p.nome)}</td><td>${e(p.categoria)}</td><td class="numero">${formatarMoeda(p.precoCentavos)}</td>
         <td>${p.ativo ? 'Ativo' : 'Inativo'}</td>
         <td><button type="button" class="botao botao--neutro botao--pequeno" data-editar="${p.id}">Editar<span class="visualmente-oculto"> ${e(p.nome)}</span></button>
-          ${p.ativo ? `<button type="button" class="botao botao--perigo botao--pequeno" data-desativar="${p.id}">Desativar<span class="visualmente-oculto"> ${e(p.nome)}</span></button>` : ''}</td></tr>`).join('')}
+          ${p.ativo
+    ? `<button type="button" class="botao botao--perigo botao--pequeno" data-desativar="${p.id}">Desativar<span class="visualmente-oculto"> ${e(p.nome)}</span></button>`
+    : `<button type="button" class="botao botao--secundario botao--pequeno" data-reativar="${p.id}">Reativar<span class="visualmente-oculto"> ${e(p.nome)}</span></button>`}</td></tr>`).join('')}
       </tbody></table></div>`;
   }
 
@@ -174,7 +176,6 @@ function abaProdutos(ctx, painel, dialogo) {
         <div class="campo"><label for="p-img">Imagem *</label><select id="p-img" name="imagem"><option value="">Selecione</option>
           ${IMAGENS_DISPONIVEIS.map((i) => `<option value="${e(i)}" ${produto?.imagem === i ? 'selected' : ''}>${e(i.split('/').pop())}</option>`).join('')}</select>
           <span class="erro-campo" data-erro-para="imagem"></span></div>
-        ${produto && !produto.ativo ? `<label class="opcao"><input type="checkbox" name="reativar"><span>Reativar este produto no cardápio</span></label>` : ''}
       </div>
       <div class="dialogo__acoes"><button type="button" class="botao botao--neutro" data-fechar>Cancelar</button><button type="submit" class="botao">Salvar</button></div>
     </form>`;
@@ -186,7 +187,6 @@ function abaProdutos(ctx, painel, dialogo) {
       try {
         if (produto) {
           ctx.produtos.atualizar(ctx.usuario, produto.id, dados);
-          if (dados.reativar) ctx.produtos.definirAtivo(ctx.usuario, produto.id, true);
         } else {
           ctx.produtos.criar(ctx.usuario, dados);
         }
@@ -208,8 +208,15 @@ function abaProdutos(ctx, painel, dialogo) {
       if (b.matches('[data-novo]')) abrirFormulario();
       else if (b.dataset.editar) abrirFormulario(ctx.produtos.buscarPorId(b.dataset.editar));
       else if (b.dataset.desativar) {
-        ctx.produtos.definirAtivo(ctx.usuario, b.dataset.desativar, false);
-        avisar('Produto desativado.');
+        // v1.1 (relato 3): confirmação antes de tirar o produto do cardápio
+        const p = ctx.produtos.buscarPorId(b.dataset.desativar);
+        if (!window.confirm(`Desativar “${p.nome}”? Ele continuará no cardápio como indisponível e poderá ser reativado.`)) return;
+        ctx.produtos.definirAtivo(ctx.usuario, p.id, false);
+        avisar(`“${p.nome}” desativado. Use “Reativar” para voltar a vendê-lo.`);
+        carregar();
+      } else if (b.dataset.reativar) {
+        const p = ctx.produtos.definirAtivo(ctx.usuario, b.dataset.reativar, true);
+        avisar(`“${p.nome}” reativado no cardápio.`, 'sucesso');
         carregar();
       }
     } catch (erro) {
