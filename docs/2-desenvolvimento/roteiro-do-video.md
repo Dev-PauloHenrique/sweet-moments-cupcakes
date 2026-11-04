@@ -2,7 +2,7 @@
 
 O PIT II pede dois vídeos: **(1)** a solução em funcionamento, narrada, com pelo menos 5 minutos; **(2)** as mudanças feitas após os testes, com até 5 minutos. Sugestão de ferramenta gratuita: gravador do Windows (Win + Alt + R na Xbox Game Bar) ou OBS Studio; publique no YouTube como “Não listado” ou no Google Drive com acesso por link.
 
-Antes de gravar: abra o site, clique em **Restaurar loja de demonstração** no rodapé e deixe a janela em tela cheia.
+Antes de gravar: abra o site, clique em **Restaurar dados iniciais** no rodapé e deixe a janela em tela cheia.
 
 ## Vídeo 1 — Solução em funcionamento (≈ 6 min)
 

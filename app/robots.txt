@@ -1,4 +1,4 @@
-# Sweet Moments Cupcakes (loja fictícia, projeto acadêmico)
+# Sweet Moments Cupcakes
 # Observação: robots.txt orienta robôs de busca; não é controle de acesso.
 User-agent: *
 Allow: /

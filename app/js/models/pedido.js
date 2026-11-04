@@ -3,7 +3,7 @@ import { FORMAS_PAGAMENTO, simularPagamento } from '../servicos/pagamento.js';
 import { ErroNaoEncontrado, ErroValidacao } from '../servicos/erros.js';
 import { Carrinho } from './carrinho.js';
 
-export const TAXA_ENTREGA_CENTAVOS = 800; // valor fictício de demonstração
+export const TAXA_ENTREGA_CENTAVOS = 800; // taxa fixa de entrega
 
 export const STATUS = ['RECEBIDO', 'EM_PREPARACAO', 'PRONTO', 'SAIU_PARA_ENTREGA', 'CONCLUIDO', 'CANCELADO'];
 

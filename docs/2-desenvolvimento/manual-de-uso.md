@@ -36,7 +36,7 @@ Depois de entrar com uma conta da equipe, use o menu **Painel**.
 
 ## Recomeçar a demonstração
 
-No rodapé, clique em **Restaurar loja de demonstração** para apagar os dados deste navegador e recriar o catálogo e as contas de exemplo.
+No rodapé, clique em **Restaurar dados iniciais** para apagar os dados deste navegador e recriar o catálogo e as contas de exemplo.
 
 ## Problemas comuns
 

@@ -92,7 +92,7 @@ Legenda: ✅ implementado · ➖ não aplicável · ⚠️ limitação/pendente.
 | 20 | Respostas mínimas | ✅ | Models devolvem só campos necessários (nunca hash/salt). |
 | 21 | Erros e logs | ✅ | Mensagens sem SQL/stack trace (`mensagemSegura`); detalhes só no console do desenvolvedor. |
 | 22 | Dependências | ✅ | Única dependência: sql.js 1.10.3 (MIT), copiada do cdnjs; testes usam apenas o Node.js. |
-| 23 | Dados sensíveis | ✅ | Coleta mínima; nenhum dado de cartão; dados ficam só no navegador e podem ser apagados (“Restaurar loja de demonstração”). |
+| 23 | Dados sensíveis | ✅ | Coleta mínima; nenhum dado de cartão; dados ficam só no navegador e podem ser apagados (“Restaurar dados iniciais”). |
 | 24 | Auditoria de RLS/policies | ➖ / ✅ | Sem RLS; a autorização foi auditada por testes automatizados com perfis distintos (`tests/pedido.test.mjs`, `produto-carrinho.test.mjs`). |
 
 Proteções adicionais: escape de todo texto inserido no HTML (`escaparHtml`), redirecionamento pós-login restrito a páginas internas (`destinoSeguro`), servidor local com proteção contra *path traversal*.

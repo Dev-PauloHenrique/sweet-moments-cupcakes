@@ -20,6 +20,3 @@ Organizada pelas três situações-problema do Projeto Integrador Transdisciplin
 - [Relatos dos testadores](3-testes-e-validacao/relatos-dos-testadores.md).
 - [Laudo de qualidade](3-testes-e-validacao/laudo-de-qualidade.md) — erros, correções e evidências.
 - [Histórico de mudanças (CHANGELOG)](../CHANGELOG.md).
-
-## Mídia
-- [Ilustrações e prompts para o Google Flow](midia/prompts-google-flow.md).

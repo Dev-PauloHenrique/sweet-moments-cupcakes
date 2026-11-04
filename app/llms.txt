@@ -1,8 +1,8 @@
 # Sweet Moments Cupcakes
 
-> Loja virtual FICTÍCIA de cupcakes gourmet, criada para o Projeto Integrador Transdisciplinar em Engenharia de Software II (Brasil, pt-BR). Nenhum produto é vendido, entregue ou cobrado de verdade: marca, preços e endereço são exemplos.
+> Loja virtual de cupcakes gourmet artesanais (Brasil, pt-BR). Pelo site é possível conhecer os sabores, montar o carrinho, fazer o pedido para retirada na loja ou entrega e acompanhar o status.
 
-O site permite navegar pelo cardápio, montar um carrinho, finalizar um pedido demonstrativo (retirada na loja ou entrega, pagamento simulado) e acompanhar o status. Os dados ficam em um banco SQLite executado no próprio navegador do visitante.
+O pagamento exibido no site é simulado: nenhum valor é cobrado on-line e nenhum dado de cartão é solicitado.
 
 ## Páginas públicas
 
@@ -11,4 +11,4 @@ O site permite navegar pelo cardápio, montar um carrinho, finalizar um pedido d
 
 ## Projeto
 
-- [Código-fonte e documentação](https://github.com/Dev-PauloHenrique/sweet-moments-cupcakes): requisitos, diagramas UML, modelo de dados, testes e relatórios do projeto acadêmico.
+- [Código-fonte e documentação](https://github.com/Dev-PauloHenrique/sweet-moments-cupcakes): requisitos, diagramas UML, modelo de dados e testes.

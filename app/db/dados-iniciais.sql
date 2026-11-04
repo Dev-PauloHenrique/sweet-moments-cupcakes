@@ -1,4 +1,4 @@
--- Dados iniciais fictícios (catálogo de demonstração).
+-- Dados iniciais (catálogo da loja).
 -- Usuários de demonstração são criados em js/db/inicializar.js,
 -- porque as senhas precisam ser transformadas em hash no momento da carga.
 

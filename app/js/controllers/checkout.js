@@ -47,9 +47,9 @@ export function iniciar(ctx) {
         <legend>Como você quer receber?</legend>
         <div class="opcoes">
           <label class="opcao"><input type="radio" name="tipoEntrega" value="RETIRADA" checked>
-            <span><strong>Retirar na loja</strong> — grátis<small>Loja fictícia: Rua dos Confeiteiros, 123 — Centro. Retirada das 10h às 19h, a partir de 2 horas após o pedido.</small></span></label>
+            <span><strong>Retirar na loja</strong> — grátis<small>Retire no balcão da loja, das 10h às 19h, a partir de 2 horas após o pedido.</small></span></label>
           <label class="opcao"><input type="radio" name="tipoEntrega" value="ENTREGA">
-            <span><strong>Entrega no endereço</strong> — ${formatarMoeda(TAXA_ENTREGA_CENTAVOS)}<small>Valor fixo de demonstração.</small></span></label>
+            <span><strong>Entrega no endereço</strong> — ${formatarMoeda(TAXA_ENTREGA_CENTAVOS)}<small>Taxa fixa de entrega.</small></span></label>
         </div>
         <span class="erro-campo" data-erro-para="tipoEntrega"></span>
       </fieldset>
@@ -85,7 +85,7 @@ export function iniciar(ctx) {
 
       <fieldset>
         <legend>Forma de pagamento</legend>
-        <p class="texto-apoio">Pagamento demonstrativo: nenhum valor é cobrado e nenhum dado de cartão é solicitado.</p>
+        <p class="texto-apoio">Pagamento simulado: nenhum valor é cobrado on-line e nenhum dado de cartão é solicitado.</p>
         <div class="opcoes">
           ${Object.entries(FORMAS_PAGAMENTO).map(([valor, rotulo], i) => `<label class="opcao">
             <input type="radio" name="formaPagamento" value="${valor}" ${i === 0 ? 'checked' : ''}><span><strong>${e(rotulo)}</strong></span></label>`).join('')}

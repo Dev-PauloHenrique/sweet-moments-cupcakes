@@ -76,7 +76,7 @@ async function principal() {
 
 $('[data-restaurar]')?.addEventListener('click', () => {
   // eslint-disable-next-line no-alert
-  if (window.confirm('Apagar os dados salvos neste navegador e restaurar a loja de demonstração?')) {
+  if (window.confirm('Apagar os dados salvos neste navegador e restaurar os dados iniciais da loja?')) {
     restaurarDemonstracao();
     window.location.href = 'index.html';
   }

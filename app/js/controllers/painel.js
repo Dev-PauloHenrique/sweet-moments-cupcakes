@@ -251,7 +251,7 @@ function abaRelatorio(ctx, painel) {
         <div class="indicador"><span>Ticket médio</span><strong>${formatarMoeda(r.ticketMedioCentavos)}</strong></div>
         <div class="indicador"><span>Cancelados</span><strong>${r.cancelados}</strong></div>
       </div>
-      <p class="texto-apoio">Faturamento e ticket médio desconsideram pedidos cancelados. Valores fictícios.</p>
+      <p class="texto-apoio">Faturamento e ticket médio desconsideram pedidos cancelados.</p>
       <div class="grade-3">
         <div><h3>Mais vendidos</h3>${r.maisVendidos.length ? `<div class="tabela-wrap"><table>
           <thead><tr><th>Produto</th><th class="numero">Unid.</th><th class="numero">Receita</th></tr></thead>

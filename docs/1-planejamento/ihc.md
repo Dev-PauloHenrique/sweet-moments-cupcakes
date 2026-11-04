@@ -37,7 +37,7 @@ flowchart TD
 - **Conceito:** confeitaria artesanal acolhedora — fundo creme, texto cacau e destaque framboesa, que remetem a massa, chocolate e frutas vermelhas.
 - **Tipografia:** *Fraunces* (serifada macia, com eixo óptico) nos títulos, transmitindo artesanal/premium; *Nunito Sans* (arredondada e muito legível) no texto. Escala fluida com `clamp()`: display 36–62 px, H1 30–42 px, H2 23–31 px, corpo 17 px, apoio 15 px, micro 13 px. Linhas de leitura limitadas a ~62 caracteres.
 - **Cores e contraste (medidos sobre o fundo #FFF8F0):** texto #2E1B12 (15,9:1), texto secundário #66493A (7,6:1), botão framboesa #A61E4D com texto branco (7,2:1). A cor nunca é o único sinal: status têm texto e indisponibilidade tem etiqueta.
-- **Imagens:** ilustrações vetoriais originais (SVG) de cada sabor, leves e nítidas em qualquer tela. Podem ser trocadas por fotos geradas no Google Flow (ver [prompts](../midia/prompts-google-flow.md)).
+- **Imagens:** fotografias de produto com a mesma luz e fundo em todos os sabores, e ilustrações vetoriais (SVG) como alternativa leve.
 
 ## Telas e componentes
 

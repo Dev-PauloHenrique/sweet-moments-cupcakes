@@ -1,7 +1,7 @@
 {
   "name": "Sweet Moments Cupcakes",
   "short_name": "Sweet Moments",
-  "description": "Loja fictícia de cupcakes gourmet (projeto acadêmico).",
+  "description": "Cupcakes gourmet artesanais.",
   "lang": "pt-BR",
   "start_url": "./",
   "display": "standalone",

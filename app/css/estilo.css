@@ -101,11 +101,6 @@ p { margin: 0 0 var(--e-4); }
 }
 .pular:focus { top: var(--e-2); color: #fff; }
 
-/* ---------- Faixa de demonstração ---------- */
-.faixa-demo {
-  background: var(--cor-chocolate); color: #fdf3ea; text-align: center;
-  font-size: var(--fs-micro); padding: var(--e-2) var(--e-4); line-height: 1.4;
-}
 
 /* ---------- Cabeçalho ---------- */
 .topo {
