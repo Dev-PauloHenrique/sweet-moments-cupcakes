@@ -1,5 +1,5 @@
-// Hash de senhas com PBKDF2-SHA-256 (Web Crypto API), salt individual por usuário.
-// Funciona no navegador e no Node.js 18+ (globalThis.crypto.subtle).
+// Senha nunca é guardada como texto: vira um hash PBKDF2-SHA-256 com um salt
+// diferente pra cada usuário. Funciona no navegador e no Node.js 18+.
 
 const ITERACOES = 120_000;
 const TAMANHO_BITS = 256;

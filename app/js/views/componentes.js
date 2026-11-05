@@ -1,4 +1,4 @@
-// Componentes de interface reutilizados pelas páginas (camada View).
+// Pedacinhos de tela que várias páginas usam (camada View).
 import { escaparHtml as e, formatarMoeda, ROTULOS_STATUS } from './formatadores.js';
 import { mensagemSegura } from '../servicos/erros.js';
 

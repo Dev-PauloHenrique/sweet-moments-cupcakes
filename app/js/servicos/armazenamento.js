@@ -1,6 +1,6 @@
-// Abstração de armazenamento chave-valor. No navegador usa localStorage;
-// nos testes (Node) usa memória. Falhas de armazenamento (modo privado,
-// cota cheia) nunca derrubam a aplicação.
+// Um "guarda-volumes" chave-valor: no navegador usa o localStorage e nos
+// testes usa a memória. Se o navegador bloquear (modo anônimo, cota cheia),
+// o site continua funcionando.
 
 export function criarArmazenamentoMemoria() {
   const mapa = new Map();

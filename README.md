@@ -1,61 +1,58 @@
 # Sweet Moments Cupcakes 🧁
 
-Loja virtual **fictícia** de cupcakes gourmet, desenvolvida para o **Projeto Integrador Transdisciplinar em Engenharia de Software II** (Cruzeiro do Sul Virtual).
+Uma lojinha online de cupcakes gourmet que eu fiz para o **Projeto Integrador Transdisciplinar em Engenharia de Software II** (Cruzeiro do Sul Virtual).
 
-**Aluno:** Paulo Henrique Cordeiro Santos
+**Feito por:** Paulo Henrique Cordeiro Santos
 
-- 🌐 **Site em funcionamento:** https://dev-paulohenrique.github.io/sweet-moments-cupcakes/
+- 🌐 **Ver o site funcionando:** https://dev-paulohenrique.github.io/sweet-moments-cupcakes/
 - 📚 **Documentação:** [docs/](docs/README.md)
-- 🧪 **Testes:** `npm test` — 28 testes automatizados (executados também pelo GitHub Actions antes de cada publicação)
+- 🧪 **Testes:** `npm test` roda 28 testes automáticos (e o GitHub roda de novo antes de cada publicação)
 
-> Projeto acadêmico: marca, produtos, preços e endereço são fictícios. Nenhum pedido, entrega ou pagamento é real, e os dados digitados ficam salvos apenas no navegador de quem usa.
+## O que dá pra fazer no site
 
-## O que o sistema faz
-
-| Perfil | Funcionalidades |
+| Quem | O que faz |
 |---|---|
-| Visitante / Cliente | Cardápio com pesquisa e filtro, detalhes do produto, carrinho, cadastro e login, checkout com entrega ou retirada, pagamento demonstrativo (Pix, cartão ou dinheiro), histórico e acompanhamento do pedido |
-| Atendente | Lista de pedidos com filtros e atualização de status |
-| Administrador | Pedidos, cadastro/edição/desativação de produtos e relatório de vendas |
-| Gestor | Pedidos e relatório de vendas (somente leitura) |
+| Visitante / cliente | Olha o cardápio, pesquisa e filtra sabores, monta o carrinho, cria conta, escolhe entrega ou retirada, "paga" (o pagamento é simulado) e acompanha o pedido |
+| Atendente | Vê os pedidos e vai mudando o status |
+| Administrador | Faz tudo do atendente, cadastra e edita produtos e vê o relatório de vendas |
+| Gestor | Vê os pedidos e o relatório, sem mexer em nada |
 
-Contas de demonstração para cada perfil estão na página **Entrar** do site e no [manual de uso](docs/2-desenvolvimento/manual-de-uso.md).
+Na página **Entrar** tem contas prontas de cada perfil pra testar rapidinho. O passo a passo tá no [manual de uso](docs/2-desenvolvimento/manual-de-uso.md).
 
-## Tecnologias
+## Com o que foi feito
 
-| Camada | Tecnologia |
+| Parte | Tecnologia |
 |---|---|
-| Front-end (View) | HTML5, CSS3, JavaScript (ES Modules), sem frameworks |
-| Lógica de negócio (Model e Controller) | JavaScript — padrão **MVC** |
-| Banco de dados | **SQLite 3** no navegador via [sql.js](https://github.com/sql-js/sql.js) (WebAssembly), persistido no `localStorage` |
-| Testes | `node:test` (Node.js 20+) |
-| Hospedagem e CI/CD | GitHub Pages + GitHub Actions |
+| Telas (View) | HTML, CSS e JavaScript puro, sem framework |
+| Regras do negócio (Model e Controller) | JavaScript, no padrão **MVC** |
+| Banco de dados | **SQLite** rodando no próprio navegador com o [sql.js](https://github.com/sql-js/sql.js) |
+| Testes | `node:test`, que já vem no Node.js |
+| Hospedagem | GitHub Pages, publicado automaticamente pelo GitHub Actions |
 
-Por que não há servidor? O GitHub Pages hospeda apenas arquivos estáticos; para ter um link gratuito e sempre disponível, as regras de negócio e o banco SQLite rodam no próprio navegador. Detalhes, limitações e checklist de segurança em [arquitetura.md](docs/2-desenvolvimento/arquitetura.md).
+**"Ué, cadê o servidor?"** O GitHub Pages só serve arquivos estáticos. Pra ter um link de graça e sempre no ar, as regras e o banco SQLite rodam direto no navegador de quem acessa. Expliquei melhor (e com os limites dessa escolha) em [arquitetura.md](docs/2-desenvolvimento/arquitetura.md).
 
-## Como executar localmente
+## Rodando na sua máquina
 
-Requisito: [Node.js](https://nodejs.org/) 20 ou superior. Não é preciso instalar dependências.
+Só precisa do [Node.js](https://nodejs.org/) 20 ou mais novo. Não tem `npm install`, porque o projeto não usa dependência nenhuma.
 
 ```bash
 git clone https://github.com/Dev-PauloHenrique/sweet-moments-cupcakes.git
 cd sweet-moments-cupcakes
 npm test     # roda os testes
-npm start    # abre o servidor em http://localhost:8080
+npm start    # abre em http://localhost:8080
 ```
 
-## Estrutura
+## Como as pastas estão organizadas
 
 ```
-app/        código publicado (HTML, CSS, JS em MVC, banco SQLite, imagens)
-docs/       documentação por situação-problema (requisitos, UML, banco, IHC, testes, laudo)
-tests/      testes automatizados
-ferramentas/servidor local de desenvolvimento
-.github/    publicação automática e formulário de relato de teste
+app/          o site em si (HTML, CSS, JS em MVC, banco SQLite, fotos e vídeo)
+docs/         documentação separada pelas três situações-problema
+tests/        testes automáticos
+ferramentas/  servidorzinho pra rodar local
+.github/      publicação automática e formulário de relato de teste
 ```
 
-## Licenças de terceiros
+## Créditos de terceiros
 
-- [sql.js](https://github.com/sql-js/sql.js) 1.10.3 — licença MIT (arquivos em `app/vendor/`).
-- Fontes [Fraunces](https://fonts.google.com/specimen/Fraunces) e [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans) — SIL Open Font License, carregadas do Google Fonts.
-- Ilustrações dos cupcakes — criadas para este projeto.
+- [sql.js](https://github.com/sql-js/sql.js) 1.10.3, licença MIT (fica em `app/vendor/`).
+- Fontes [Fraunces](https://fonts.google.com/specimen/Fraunces) e [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans), licença SIL Open Font, carregadas pelo Google Fonts.

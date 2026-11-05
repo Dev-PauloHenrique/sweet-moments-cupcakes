@@ -1,5 +1,5 @@
-// Erros de domínio. As mensagens são pensadas para serem exibidas ao usuário:
-// nunca incluem SQL, stack trace ou dados internos.
+// Erros "do negócio". A mensagem deles vai direto pra tela, então nada de
+// SQL, stack trace ou detalhe interno aqui.
 
 export class ErroAplicacao extends Error {
   constructor(mensagem, campos = {}) {

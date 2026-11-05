@@ -1,6 +1,6 @@
-# Plano e resultados de testes (verificação e validação)
+# Testes
 
-Seguindo o **Modelo V** do material da disciplina: cada nível de construção tem um nível de teste correspondente.
+Segui o **Modelo V** que aparece no material da disciplina: pra cada etapa de construção existe um tipo de teste que confere ela.
 
 | Construção | Teste correspondente | Como foi feito |
 |---|---|---|

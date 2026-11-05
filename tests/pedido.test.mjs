@@ -135,5 +135,5 @@ test('carga de demonstração cria contas de todos os perfis e pedidos de exempl
   const perfis = banco.consultar('SELECT perfil FROM usuario ORDER BY id').map((l) => l.perfil);
   assert.deepEqual(perfis, ['CLIENTE', 'ATENDENTE', 'ADMINISTRADOR', 'GESTOR']);
   assert.equal(banco.consultarUm('SELECT COUNT(*) AS n FROM pedido').n, 2);
-  assert.equal(banco.versao(), 1);
+  assert.equal(banco.versao(), 2);
 });

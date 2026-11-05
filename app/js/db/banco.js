@@ -1,5 +1,5 @@
-// Camada de acesso a dados: encapsula o SQLite (sql.js).
-// Todas as consultas usam parâmetros vinculados (?), nunca concatenação de texto.
+// Tudo que fala com o SQLite (sql.js) passa por aqui.
+// Toda consulta usa parâmetro (?) — nada de colar texto do usuário dentro do SQL.
 
 export class BancoDeDados {
   /**

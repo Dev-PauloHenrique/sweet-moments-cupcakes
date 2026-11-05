@@ -1,5 +1,5 @@
-// Serviço de pagamento DEMONSTRATIVO (RN11): nenhuma transação real é feita
-// e nenhum dado de cartão é solicitado ou armazenado.
+// Pagamento de mentirinha (RN11): não cobra nada e não pede nem guarda
+// dado de cartão nenhum.
 
 export const FORMAS_PAGAMENTO = {
   PIX: 'Pix (simulado)',

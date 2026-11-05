@@ -1,6 +1,6 @@
 {
   "name": "sweet-moments-cupcakes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Loja virtual fictícia de cupcakes gourmet — Projeto Integrador Transdisciplinar em Engenharia de Software II.",
   "engines": { "node": ">=20" },

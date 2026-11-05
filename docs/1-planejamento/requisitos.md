@@ -1,13 +1,13 @@
-# Planejamento e especificação de requisitos
+# Requisitos do projeto
 
 **Projeto:** Sweet Moments Cupcakes — loja web responsiva de cupcakes gourmet
 **Disciplina:** Projeto Integrador Transdisciplinar em Engenharia de Software II
 **Aluno:** Paulo Henrique Cordeiro Santos
 **Versão do documento:** 2.0 (revisão da PIT I — novembro de 2026)
 
-> Estabelecimento, produtos, preços e endereço são **fictícios**. O sistema é uma demonstração acadêmica: não há vendas, entregas ou pagamentos reais.
+> Resumo rápido: aqui está o que o sistema precisa fazer, as regras que ele segue e o que mudou desde a PIT I. O pagamento é simulado, então nada é cobrado de verdade.
 
-## Histórico de revisões (melhoria contínua / Kaizen)
+## O que mudou desde a primeira versão
 
 | Versão | O que mudou | Motivo |
 |---|---|---|
@@ -15,9 +15,9 @@
 | 2.0 | Arquitetura revista para **aplicação estática com MVC em JavaScript e SQLite no navegador**, hospedada no GitHub Pages; premissas pendentes resolvidas (catálogo, status, pagamentos, perfis); carrinho passou a ser armazenado no navegador; classe `Cliente` incorporada a `Usuario` por meio do atributo `perfil`; incluído histórico de status do pedido; diagramas UML atualizados. | Reduzir custo e complexidade de hospedagem (sem servidor), manter a modelagem fiel ao que foi implementado e permitir que tutores testem a solução apenas abrindo um link. |
 | 2.1 | Pesquisa de sabores (UC02), máscaras de CEP/telefone, confirmação/reativação de produtos e alvos de toque maiores. | Sugestões dos testes com usuários (Situação 3). |
 
-## 1. Apresentação
+## 1. A ideia
 
-O Sweet Moments Cupcakes permite que clientes vejam o cardápio, montem um carrinho, escolham entre **retirada na loja** ou **entrega**, selecionem uma forma de pagamento **demonstrativa** e acompanhem o andamento do pedido. A equipe da loja (atendente, administrador e gestor) usa um painel para atualizar status, manter o catálogo e consultar indicadores de vendas.
+No site, o cliente vê o cardápio, monta o carrinho, escolhe se vai **retirar na loja** ou **receber em casa**, escolhe como vai pagar (de forma simulada) e acompanha o pedido. Do outro lado, a equipe (atendente, administrador e gestor) usa um painel pra mudar o status dos pedidos, cuidar do catálogo e ver como estão as vendas.
 
 A situação-problema de origem descreve uma loja de cupcakes gourmet frustrada com um aplicativo anterior que falhou por **má elicitação de requisitos**. Por isso, a especificação foi feita antes da implementação, com histórias de usuário, critérios de aceitação, regras de negócio rastreáveis e validação com usuários.
 
@@ -130,7 +130,7 @@ Gateway de pagamento real, emissão fiscal, logística/rastreamento, notificaç�
 | RNF06 | Manutenibilidade | Padrão MVC, módulos ES pequenos, sem dependências externas além do sql.js. |
 | RNF07 | Compatibilidade | Navegadores modernos com WebAssembly (Chrome, Edge, Firefox, Safari, Opera). |
 | RNF08 | Tratamento de erros | Erros de domínio com mensagens seguras; falhas inesperadas mostram estado de erro sem detalhes técnicos. |
-| RNF09 | Desempenho | Site estático, imagens SVG leves, carregamento preguiçoso de imagens, sem frameworks. |
+| RNF09 | Desempenho | Site estático, fotos em WebP (~35 KB), imagens carregadas só quando aparecem na tela, sem frameworks. |
 | RNF10 | Persistência | Banco SQLite salvo no `localStorage` após cada escrita. |
 | RNF11 | Acessibilidade (meta WCAG 2.2 AA) | HTML semântico, rótulos, foco visível, contraste ≥ 4,5:1, alvos de toque de 44 px, `aria-live`, redução de movimento. |
 

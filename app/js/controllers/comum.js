@@ -1,4 +1,4 @@
-// Ações compartilhadas entre controllers.
+// Coisinhas que mais de um controller usa.
 import { avisar } from '../views/componentes.js';
 import { mensagemSegura } from '../servicos/erros.js';
 

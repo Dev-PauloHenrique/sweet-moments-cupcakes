@@ -1,4 +1,6 @@
-# Arquitetura e codificação
+# Arquitetura
+
+Como o código está organizado, por que foi feito assim e o que foi feito pra deixar tudo seguro.
 
 ![Arquitetura MVC](../1-planejamento/diagramas/arquitetura-mvc.png)
 
@@ -39,7 +41,7 @@ app/                  ← tudo o que é publicado no GitHub Pages
 ├── *.html            ← Views (uma por página)
 ├── css/estilo.css
 ├── db/               ← schema.sql e dados-iniciais.sql
-├── img/              ← ilustrações SVG
+├── img/              ← fotos (WebP) e o vídeo da abertura
 ├── js/
 │   ├── app.js        ← front controller
 │   ├── controllers/

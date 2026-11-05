@@ -1,4 +1,6 @@
-# Interface Humano-Computador (IHC)
+# Telas e usabilidade (IHC)
+
+Aqui fica como o site está organizado, como cada tela se comporta e o que aparece quando algo dá certo ou errado.
 
 ## Mapa do site
 
@@ -37,7 +39,7 @@ flowchart TD
 - **Conceito:** confeitaria artesanal acolhedora — fundo creme, texto cacau e destaque framboesa, que remetem a massa, chocolate e frutas vermelhas.
 - **Tipografia:** *Fraunces* (serifada macia, com eixo óptico) nos títulos, transmitindo artesanal/premium; *Nunito Sans* (arredondada e muito legível) no texto. Escala fluida com `clamp()`: display 36–62 px, H1 30–42 px, H2 23–31 px, corpo 17 px, apoio 15 px, micro 13 px. Linhas de leitura limitadas a ~62 caracteres.
 - **Cores e contraste (medidos sobre o fundo #FFF8F0):** texto #2E1B12 (15,9:1), texto secundário #66493A (7,6:1), botão framboesa #A61E4D com texto branco (7,2:1). A cor nunca é o único sinal: status têm texto e indisponibilidade tem etiqueta.
-- **Imagens:** fotografias de produto com a mesma luz e fundo em todos os sabores, e ilustrações vetoriais (SVG) como alternativa leve.
+- **Imagens:** fotos dos cupcakes com a mesma mesa, luz e fundo em todos os sabores, e um vídeo curto de fundo na abertura (com a foto parada pra quem prefere menos movimento).
 
 ## Telas e componentes
 

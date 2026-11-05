@@ -17,7 +17,7 @@
   <meta property="og:title" content="Sweet Moments Cupcakes | Cupcakes gourmet artesanais">
   <meta property="og:description" content="Cupcakes gourmet artesanais: escolha seus sabores, monte o pedido pelo site e retire na loja ou receba em casa.">
   <meta property="og:url" content="https://dev-paulohenrique.github.io/sweet-moments-cupcakes/">
-  <meta property="og:image" content="https://dev-paulohenrique.github.io/sweet-moments-cupcakes/img/compartilhar.png">
+  <meta property="og:image" content="https://dev-paulohenrique.github.io/sweet-moments-cupcakes/img/compartilhar.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,19 +57,17 @@
   </header>
 
   <main id="conteudo" tabindex="-1">
-    <section class="hero">
-      <div class="container hero__grade">
-        <div>
-          <span class="selo">Feitos à mão, todos os dias</span>
-          <h1>Pequenos bolos, <em>grandes momentos</em>.</h1>
-          <p class="hero__texto">Cupcakes gourmet com massa macia, recheios cremosos e coberturas preparadas na hora. Peça pelo site e retire na loja ou receba em casa.</p>
-          <div class="hero__acoes">
-            <a class="botao" href="cardapio.html">Ver cardápio</a>
-            <a class="botao botao--secundario" href="#como-funciona">Como funciona</a>
-          </div>
-        </div>
-        <div class="hero__imagem">
-          <img src="img/hero.svg" alt="Ilustração de três cupcakes com coberturas de framboesa, chocolate e baunilha" width="640" height="640" fetchpriority="high">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <video class="hero__video" muted loop playsinline preload="metadata" poster="img/hero.webp" aria-hidden="true" data-hero-video>
+        <source src="img/hero.mp4" type="video/mp4">
+      </video>
+      <div class="container hero__conteudo">
+        <span class="selo">Feitos à mão, todos os dias</span>
+        <h1 id="titulo-hero">Pequenos bolos, <em>grandes momentos</em>.</h1>
+        <p class="hero__texto">Cupcakes gourmet com massa macia, recheios cremosos e coberturas preparadas na hora. Peça pelo site e retire na loja ou receba em casa.</p>
+        <div class="hero__acoes">
+          <a class="botao" href="cardapio.html">Ver cardápio</a>
+          <a class="botao botao--claro" href="#como-funciona">Como funciona</a>
         </div>
       </div>
     </section>

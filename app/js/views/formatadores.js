@@ -1,4 +1,4 @@
-// Funções puras de apresentação (sem DOM) — testáveis no Node.
+// Funções que só formatam coisas pra mostrar (não mexem na tela), por isso dá pra testar no Node.
 import { FORMAS_PAGAMENTO } from '../servicos/pagamento.js';
 
 const moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });

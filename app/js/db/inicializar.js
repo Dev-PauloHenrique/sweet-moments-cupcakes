@@ -2,12 +2,11 @@ import { BancoDeDados } from './banco.js';
 import { UsuarioModel } from '../models/usuario.js';
 import { PedidoModel } from '../models/pedido.js';
 
-export const VERSAO_ESQUEMA = 1;
+export const VERSAO_ESQUEMA = 2;
 
 /**
- * Contas FICTÍCIAS de demonstração, criadas somente no navegador de quem
- * acessa (não existe servidor). Servem para o professor/tutor testar
- * cada perfil. Não são credenciais de nenhum serviço real.
+ * Contas de demonstração, uma de cada perfil, pra quem for avaliar conseguir
+ * testar tudo. Elas só existem no navegador de quem abre o site.
  */
 export const SENHA_DEMO = 'Cupcake2026';
 export const CONTAS_DEMO = [

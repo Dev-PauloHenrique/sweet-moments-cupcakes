@@ -3,15 +3,15 @@ import { ErroNaoEncontrado, ErroValidacao } from '../servicos/erros.js';
 
 /** Imagens que o administrador pode associar a um produto (não há upload de arquivos). */
 export const IMAGENS_DISPONIVEIS = [
-  'img/produtos/baunilha-frutas-vermelhas.svg',
-  'img/produtos/chocolate-belga.svg',
-  'img/produtos/red-velvet.svg',
-  'img/produtos/brigadeiro.svg',
-  'img/produtos/doce-de-leite.svg',
-  'img/produtos/limao-siciliano.svg',
-  'img/produtos/pistache.svg',
-  'img/produtos/cenoura-chocolate.svg',
-  'img/produtos/maracuja.svg',
+  'img/produtos/baunilha-frutas-vermelhas.webp',
+  'img/produtos/chocolate-belga.webp',
+  'img/produtos/red-velvet.webp',
+  'img/produtos/brigadeiro.webp',
+  'img/produtos/doce-de-leite.webp',
+  'img/produtos/limao-siciliano.webp',
+  'img/produtos/pistache.webp',
+  'img/produtos/cenoura-chocolate.webp',
+  'img/produtos/maracuja.webp',
 ];
 
 const CAMPOS = `p.id, p.nome, p.descricao, p.preco_centavos AS precoCentavos, p.imagem,

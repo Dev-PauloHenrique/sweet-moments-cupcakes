@@ -1,6 +1,6 @@
-# Modelagem UML
+# Diagramas UML
 
-Os diagramas foram revisados na PIT II para refletir exatamente o que foi implementado. O código-fonte de cada diagrama está em [`diagramas/`](diagramas/) no formato **Mermaid** (`.mmd`), que pode ser editado em texto e é renderizado pelo GitHub; ao lado de cada fonte há a versão em imagem (`.png`).
+Revisei os diagramas na PIT II pra eles baterem exatamente com o que foi construído. O código-fonte de cada diagrama está em [`diagramas/`](diagramas/) no formato **Mermaid** (`.mmd`), que pode ser editado em texto e é renderizado pelo GitHub; ao lado de cada fonte há a versão em imagem (`.png`).
 
 | Diagrama | Fonte | Imagem |
 |---|---|---|

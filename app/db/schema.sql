@@ -98,4 +98,4 @@ CREATE INDEX idx_pedido_data         ON pedido (data_pedido);
 CREATE INDEX idx_item_pedido_pedido  ON item_pedido (pedido_id);
 CREATE INDEX idx_historico_pedido    ON historico_status (pedido_id);
 
-PRAGMA user_version = 1;
+PRAGMA user_version = 2;

@@ -1,5 +1,5 @@
-// Monta um banco SQLite em memória idêntico ao do navegador, usando os
-// mesmos arquivos schema.sql, dados-iniciais.sql e sql.js da aplicação.
+// Monta um banco SQLite em memória igualzinho ao do navegador, usando os
+// mesmos schema.sql, dados-iniciais.sql e sql.js do site.
 import { readFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';

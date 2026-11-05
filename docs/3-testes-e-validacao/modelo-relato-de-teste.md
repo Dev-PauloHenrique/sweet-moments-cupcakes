@@ -1,6 +1,6 @@
 # Modelo de relato de teste
 
-Use este modelo para registrar o que você testou. Também é possível preenchê-lo como formulário em **GitHub › Issues › New issue › Relato de teste**.
+Testou o site? Usa este modelo pra contar como foi. Se preferir, tem o mesmo formulário no **GitHub › Issues › New issue › Relato de teste**.
 
 **Site:** link da solução publicada · **Contas de demonstração:** página “Entrar” › “Contas de demonstração”
 

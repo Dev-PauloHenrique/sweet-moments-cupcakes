@@ -1,5 +1,5 @@
-// Abre o SQLite no navegador e persiste o arquivo do banco no localStorage.
-// O módulo sql.js (vendor/sql-wasm.js) é carregado antes como script clássico.
+// Abre o SQLite no navegador e guarda o arquivo do banco no localStorage.
+// O sql.js (vendor/sql-wasm.js) já foi carregado antes, como script normal.
 import { criarBanco } from './inicializar.js';
 
 const CHAVE = 'smc:banco:v1';

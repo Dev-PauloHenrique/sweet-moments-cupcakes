@@ -1,6 +1,6 @@
-# Relatos dos testadores (versão 1.0)
+# Relatos de quem testou (versão 1.0)
 
-Cinco pessoas testaram a versão 1.0 publicada, usando o [modelo de relato](modelo-relato-de-teste.md). A análise de cada relato e as correções estão no [laudo de qualidade](laudo-de-qualidade.md).
+Cinco pessoas testaram a versão 1.0 já publicada e preencheram o [modelo de relato](modelo-relato-de-teste.md). O que fiz com cada relato está no [laudo de qualidade](laudo-de-qualidade.md).
 
 ## Relato 1 — Mariana Couto Ferreira
 - **Data do teste:** 04/11/2026

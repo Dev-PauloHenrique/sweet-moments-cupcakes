@@ -1,13 +1,13 @@
-# Projeto de banco de dados
+# Banco de dados
 
 **SGBD:** SQLite 3 (versão embarcada no [sql.js 1.10.3](https://github.com/sql-js/sql.js), WebAssembly)
 **Script físico:** [`app/db/schema.sql`](../../app/db/schema.sql) · **Carga inicial:** [`app/db/dados-iniciais.sql`](../../app/db/dados-iniciais.sql)
 
-O SQLite foi escolhido por ser um SGBD relacional amplamente usado, sem servidor, com suporte a chaves estrangeiras, restrições `CHECK`, índices e transações ACID — o que permite rodar o mesmo banco no navegador (GitHub Pages) e nos testes automatizados (Node.js). O arquivo do banco é salvo no `localStorage` do navegador após cada escrita confirmada.
+Escolhi o SQLite porque é um banco relacional bem conhecido, não precisa de servidor e tem tudo o que o projeto pedia: chave estrangeira, `CHECK`, índice e transação. Com ele o mesmo banco roda no navegador (no GitHub Pages) e nos testes automáticos (no Node.js). Depois de cada gravação, o arquivo do banco é salvo no `localStorage` do navegador.
 
 ## 1. Projeto conceitual
 
-Entidades e relacionamentos identificados a partir do diagrama de classes:
+Partindo do diagrama de classes, cheguei nestas entidades e relações:
 
 - **Usuário** (cliente ou membro da equipe) **possui** endereços e **realiza** pedidos.
 - **Categoria** **classifica** produtos (1:N).

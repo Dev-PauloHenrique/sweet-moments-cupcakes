@@ -1,32 +1,46 @@
-# Histórico de mudanças
+# O que mudou em cada versão
 
-Todas as alterações relevantes do projeto ficam registradas aqui (formato inspirado no Keep a Changelog).
+Aqui fica anotado tudo de relevante que mudou no projeto, da versão mais nova pra mais antiga.
+
+## [1.2.0] — 2026-11-05
+
+### Novidades
+- Fotos de verdade em todos os sabores (no lugar das ilustrações), todas com a mesma mesa de madeira e luz quente de fim de tarde. Viraram WebP de uns 35 KB cada pra não pesar.
+- A abertura da página inicial ganhou um vídeo curtinho de fundo, com o título por cima. Se a pessoa pediu menos animação no sistema (ou está economizando dados), aparece só a foto parada.
+- Nova imagem de compartilhamento pra quando o link é mandado no WhatsApp/redes.
+- Um zoom bem leve na foto do produto quando passa o mouse no cartão.
+
+### Mudanças
+- Tirei a faixa e os textos dizendo que a loja era de mentirinha; o enunciado do PIT não pede isso. O aviso de que o pagamento é simulado continuou, porque é regra do projeto (RN11).
+- No checkout, a retirada agora mostra só o horário do balcão.
+- O banco local foi pra versão 2, então quem já tinha aberto o site recebe o catálogo novo com as fotos automaticamente.
+- Textos da documentação ficaram mais diretos.
 
 ## [1.1.0] — 2026-11-04
 
-Melhorias a partir dos testes com usuários (ver `docs/3-testes-e-validacao/laudo-de-qualidade.md`).
+Melhorias que saíram dos testes com usuários (detalhes no [laudo de qualidade](docs/3-testes-e-validacao/laudo-de-qualidade.md)).
 
-### Adicionado
-- Pesquisa de sabores por nome ou ingrediente no cardápio, sem diferenciar maiúsculas e acentos (relato 1). Teste de regressão incluído.
-- Máscaras de digitação para celular e CEP; foco automático no primeiro campo inválido (relato 2). Testes das máscaras e dos formatadores do front-end.
+### Novidades
+- Campo de pesquisa no cardápio, que acha o sabor pelo nome ou ingrediente mesmo sem acento (relato 1). Com teste automático.
+- Máscara no celular e no CEP, e o cursor vai direto pro primeiro campo com erro (relato 2). Também com testes.
 - Botão "Reativar" na lista de produtos e confirmação antes de desativar (relato 3).
-- Formulário de relato de teste em GitHub Issues e documentação completa em `docs/`.
+- Formulário de relato de teste no GitHub Issues e a documentação toda em `docs/`.
 
-### Corrigido
-- Botões de quantidade do carrinho com área de toque de 44 px (relato 4).
+### Correções
+- Botões de + e − do carrinho maiores (44 px), pra não errar o toque no celular (relato 4).
 
-### Analisado e não implementado
-- Notificações por e-mail/WhatsApp (relato 5): exigem servidor e serviço de envio; fora do escopo da aplicação estática.
+### Pensado, mas ficou pra depois
+- Avisar o cliente por e-mail/WhatsApp quando o status muda (relato 5): precisa de servidor e de um serviço de envio, então não cabe num site estático.
 
 ## [1.0.0] — 2026-11-04
 
-### Corrigido
-- Rolagem horizontal no painel em telas de 375 px (textos ocultos para leitores de tela escapavam da tabela).
+### Novidades
+- A loja inteira: início, cardápio com filtro, detalhe do produto, carrinho, checkout (entrega ou retirada, pagamento simulado), login/cadastro, "Meus pedidos" com o andamento de cada pedido e o painel da equipe (pedidos, produtos e relatório).
+- MVC em JavaScript, com SQLite rodando no navegador pelo sql.js e salvando tudo localmente.
+- Regras de negócio RN01–RN12 nos Models; senhas guardadas com PBKDF2-SHA-256 e salt próprio de cada usuário.
+- 23 testes automáticos (`npm test`).
+- Publicação automática no GitHub Pages, que só acontece se os testes passarem.
+- `sitemap.xml`, `robots.txt` e `llms.txt`.
 
-### Adicionado
-- Loja web responsiva: início, cardápio com filtro por categoria, detalhe do produto, carrinho, checkout (entrega/retirada e pagamento demonstrativo), login/cadastro, "Meus pedidos" com linha do tempo de status e painel da equipe (pedidos, produtos e relatório de vendas).
-- Arquitetura MVC em JavaScript (ES Modules) com banco SQLite executado no navegador via sql.js (WebAssembly) e persistência local.
-- Regras de negócio RN01–RN12 implementadas nos Models; senhas com PBKDF2-SHA-256 e salt individual.
-- 23 testes automatizados (`npm test`) cobrindo usuários, produtos, carrinho, pedidos, permissões e relatório.
-- Publicação automática no GitHub Pages condicionada à aprovação dos testes (GitHub Actions).
-- Arquivos de descoberta: `sitemap.xml`, `robots.txt` e `llms.txt`.
+### Correções
+- O painel tinha rolagem pro lado em telas de 375 px por causa de textos escondidos (pra leitor de tela) escapando da tabela.

@@ -1,4 +1,4 @@
-// Servidor estático mínimo para rodar o site localmente (sem dependências).
+// Servidorzinho pra rodar o site na sua máquina, sem instalar nada.
 // Uso: node ferramentas/servidor.mjs  →  http://localhost:8080
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';

@@ -1,5 +1,5 @@
-// Ponto de entrada (front controller / roteador): monta os Models, identifica
-// a página pelo atributo data-pagina do <body> e entrega o controle ao Controller.
+// Porta de entrada do site (o "front controller"): monta os Models, descobre em qual
+// página estamos pelo data-pagina do <body> e passa a bola pro Controller certo.
 import { obterBanco, restaurarDemonstracao } from './db/conexao-navegador.js';
 import { criarArmazenamentoNavegador } from './servicos/armazenamento.js';
 import { Sessao } from './servicos/sessao.js';
@@ -72,6 +72,15 @@ async function principal() {
       });
     }
   }
+}
+
+// Vídeo da abertura: só toca se a pessoa não pediu menos movimento nem economia de dados.
+// Senão fica a foto parada (poster), que já é bonita sozinha.
+const videoHero = $('[data-hero-video]');
+if (videoHero) {
+  const menosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const economiaDados = navigator.connection?.saveData === true;
+  if (!menosMovimento && !economiaDados) videoHero.play().catch(() => {});
 }
 
 $('[data-restaurar]')?.addEventListener('click', () => {
