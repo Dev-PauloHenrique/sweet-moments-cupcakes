@@ -5,7 +5,7 @@ Aqui fica anotado tudo de relevante que mudou no projeto, da versão mais nova p
 ## [1.2.0] — 2026-11-05
 
 ### Novidades
-- Fotos de verdade em todos os sabores (no lugar das ilustrações), todas com a mesma mesa de madeira e luz quente de fim de tarde. Viraram WebP de uns 35 KB cada pra não pesar.
+- Fotos em todos os sabores (no lugar das ilustrações), todas com a mesma mesa de madeira e luz quente de fim de tarde. Viraram WebP de uns 35 KB cada pra não pesar.
 - A abertura da página inicial ganhou um vídeo curtinho de fundo, com o título por cima. Se a pessoa pediu menos animação no sistema (ou está economizando dados), aparece só a foto parada.
 - Nova imagem de compartilhamento pra quando o link é mandado no WhatsApp/redes.
 - Um zoom bem leve na foto do produto quando passa o mouse no cartão.
